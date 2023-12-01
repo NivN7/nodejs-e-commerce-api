@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Smart LED TV",
+    "price": 59999,
+    "image": "https://example.com/smart-tv.jpg",
+    "colors": ["#3333cc", "#cc3333", "#33cc33"],
+    "company": "TechVision",
+    "description": "Experience high-definition entertainment with our smart LED TV. Features include smart connectivity, 4K resolution, and a sleek design.",
+    "category": "electronics"
+  },
+  {
+    "name": "Wireless Headphones",
+    "price": 8999,
+    "image": "https://example.com/wireless-headphones.jpg",
+    "colors": ["#ff9900", "#666666", "#0099cc"],
+    "company": "AudioTech",
+    "description": "Enjoy immersive sound with our wireless headphones. Comfortable design, long battery life, and noise-canceling technology for a superior audio experience.",
+    "category": "audio"
+  },
+  {
+    "name": "Smartphone",
+    "price": 34999,
+    "image": "https://example.com/smartphone.jpg",
+    "colors": ["#ffcc00", "#ff6666", "#99cc99"],
+    "company": "MobileMasters",
+    "description": "Stay connected with our advanced smartphone. Powerful features, stunning camera quality, and a sleek, durable design make it a perfect companion.",
+    "category": "mobile"
+  },
+  {
+    "name": "Laptop",
+    "price": 64999,
+    "image": "https://example.com/laptop.jpg",
+    "colors": ["#333333", "#cccccc", "#666666"],
+    "company": "TechHub",
+    "description": "Boost your productivity with our high-performance laptop. Features include a fast processor, ample storage, and a full HD display for an optimal computing experience.",
+    "category": "computing"
+  },
+  {
+    "name": "Smart Watch",
+    "price": 14999,
+    "image": "https://example.com/smart-watch.jpg",
+    "colors": ["#cc3399", "#6699cc", "#ff6633"],
+    "company": "WearTech",
+    "description": "Track your fitness and stay connected with our feature-packed smartwatch. Stylish design, health monitoring, and seamless connectivity with your smartphone.",
+    "category": "wearables"
+  },
+  {
+    "name": "Gaming Console",
+    "price": 29999,
+    "image": "https://example.com/gaming-console.jpg",
+    "colors": ["#ff0000", "#00ff00", "#0000ff"],
+    "company": "GameMaster",
+    "description": "Immerse yourself in the world of gaming with our advanced gaming console. High-quality graphics, fast processing, and a vast library of games for an unparalleled gaming experience.",
+    "category": "gaming"
+  },
+  {
+    "name": "Digital Camera",
+    "price": 44999,
+    "image": "https://example.com/digital-camera.jpg",
+    "colors": ["#9900cc", "#cc9900", "#009966"],
+    "company": "CaptureTech",
+    "description": "Capture life's moments in stunning detail with our digital camera. High-resolution imaging, multiple shooting modes, and user-friendly controls for photography enthusiasts.",
+    "category": "photography"
+  },
+  {
+    "name": "Portable Bluetooth Speaker",
+    "price": 4999,
+    "image": "https://example.com/bluetooth-speaker.jpg",
+    "colors": ["#ff6666", "#66cc99", "#ffcc66"],
+    "company": "SoundScape",
+    "description": "Take your music anywhere with our portable Bluetooth speaker. Compact design, long battery life, and high-quality sound for an enjoyable listening experience on the go.",
+    "category": "audio"
+  },
+  {
+    "name": "Smart Home Hub",
+    "price": 7999,
+    "image": "https://example.com/smart-home-hub.jpg",
+    "colors": ["#3366cc", "#cc9966", "#ff3366"],
+    "company": "HomeConnect",
+    "description": "Transform your home with our smart home hub. Control devices, set schedules, and enhance security with this centralized smart home solution.",
+    "category": "smart home"
+  },
+  {
+    "name": "Fitness Tracker",
+    "price": 5999,
+    "image": "https://example.com/fitness-tracker.jpg",
+    "colors": ["#6699cc", "#cc9966", "#ff3366"],
+    "company": "FitTech",
+    "description": "Achieve your fitness goals with our advanced fitness tracker. Monitor activities, track health metrics, and stay motivated on your journey to a healthier lifestyle.",
+    "category": "wearables"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "tax": 399,
+    "shippingFee": 299,
+    "items": [
+      {
+        "name": "Wireless Headphones",
+        "price": 8999,
+        "image": "https://example.com/wireless-headphones.jpg",
+        "amount": 2,
+        "product": "6126ad3424d2bd09165a68c8"
+      }
+    ]
+  },
+  {
+    "tax": 499,
+    "shippingFee": 799,
+    "items": [
+      {
+        "name": "Smart Watch",
+        "price": 14999,
+        "image": "https://example.com/smart-watch.jpg",
+        "amount": 3,
+        "product": "6126ad3424d2bd09165a68c7"
+      },
+      {
+        "name": "Fitness Tracker",
+        "price": 5999,
+        "image": "https://example.com/fitness-tracker.jpg",
+        "amount": 2,
+        "product": "6126ad3424d2bd09165a68c4"
+      }
+    ]
+  }
+]
