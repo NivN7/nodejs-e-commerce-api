@@ -1,5 +1,6 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import dotenv from "dotenv";
+import morgan from "morgan";
 
 import connectDB from "./db/connect";
 import { notFoundMiddleware } from "./middleware/not-found";
@@ -9,13 +10,14 @@ dotenv.config();
 
 const app = express();
 
+app.use(morgan("tiny"));
 app.use(express.json());
 
 const port = process.env.PORT || 3000;
 const MONGO_URL = process.env.MONGO_URL;
 
-app.get("/", (req, res) => {
-  res.send("E-commerce API");
+app.get("/", (req: Request, res: Response) => {
+  res.status(200).send("E-commerce API");
 });
 
 app.use(notFoundMiddleware);
