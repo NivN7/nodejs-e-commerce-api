@@ -5,6 +5,7 @@ import morgan from "morgan";
 import connectDB from "./db/connect";
 import { notFoundMiddleware } from "./middleware/not-found";
 import { errorHandlerMiddleware } from "./middleware/error-handler";
+import authRouter from "./routes/auth-route";
 
 dotenv.config();
 
@@ -19,6 +20,8 @@ const MONGO_URL = process.env.MONGO_URL;
 app.get("/", (req: Request, res: Response) => {
   res.status(200).send("E-commerce API");
 });
+
+app.use("/api/v1/auth", authRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
