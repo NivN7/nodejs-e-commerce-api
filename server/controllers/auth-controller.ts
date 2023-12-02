@@ -63,6 +63,20 @@ export const login = async (
   }
 };
 
-export const logout = async (req: Request, res: Response) => {
-  res.send("logout user");
+export const logout = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    res.cookie("token", "logout", {
+      httpOnly: true,
+      expires: new Date(Date.now()),
+    });
+
+    res.status(StatusCodes.OK).json({ msg: "user logged out!" });
+  } catch (error) {
+    console.error("Error in logout:", error);
+    next(error);
+  }
 };
