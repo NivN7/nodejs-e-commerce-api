@@ -7,6 +7,7 @@ interface IUser {
   email: string;
   password: string;
   role: "admin" | "user";
+  comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
 const isEmailValid = (value: string): boolean => {
