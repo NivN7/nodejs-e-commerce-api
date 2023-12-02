@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import validator from "validator";
+import bcrypt from "bcryptjs";
 
 interface IUser {
   name: string;
@@ -39,6 +40,18 @@ const UserSchema = new Schema<IUser>({
     default: "user" as const,
   },
 });
+
+UserSchema.pre("save", async function () {
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+
+UserSchema.methods.comparePassword = async function (
+  candidatePassword: string
+) {
+  const isMatch = await bcrypt.compare(candidatePassword, this.password);
+  return isMatch;
+};
 
 const UserModel = mongoose.model<IUser>("User", UserSchema);
 
