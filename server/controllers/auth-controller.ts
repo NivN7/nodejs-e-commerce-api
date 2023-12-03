@@ -3,7 +3,7 @@ import { StatusCodes } from "http-status-codes";
 
 import User from "../models/user-model";
 import CustomError from "../errors";
-import { attachCookiesToResponse, createJWT } from "../utils";
+import { attachCookiesToResponse, createTokenUser } from "../utils";
 
 export const register = async (
   req: Request,
@@ -19,7 +19,7 @@ export const register = async (
     }
 
     const user = await User.create({ email, name, password, role });
-    const tokenUser = { name: user.name, userId: user._id, role: user.role };
+    const tokenUser = createTokenUser(user);
 
     attachCookiesToResponse({ res, user: tokenUser });
 
@@ -53,7 +53,7 @@ export const login = async (
       throw new CustomError.UnauthenticatedError("Invalid credentials");
     }
 
-    const tokenUser = { name: user.name, useId: user._id, role: user.role };
+    const tokenUser = createTokenUser(user);
     attachCookiesToResponse({ res, user: tokenUser });
 
     res.status(StatusCodes.OK).json({ user: tokenUser });

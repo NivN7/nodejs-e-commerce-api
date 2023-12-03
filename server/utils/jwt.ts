@@ -14,7 +14,7 @@ const createJWT = ({ payload }: { payload: any }): string | null => {
   return null;
 };
 
-const isTokenValid = (token: string): any => {
+const isTokenValid = ({ token }: { token: string }): any => {
   const { JWT_SECRET } = process.env;
 
   if (JWT_SECRET) {
