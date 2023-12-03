@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import dotenv from "dotenv";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
+import fileUpload from "express-fileupload";
 
 import connectDB from "./db/connect";
 import { notFoundMiddleware } from "./middleware/not-found";
@@ -17,6 +18,9 @@ const app = express();
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cookieParser(process.env.JWT_SECRET));
+
+app.use(express.static("./public"));
+app.use(fileUpload());
 
 const port = process.env.PORT || 3000;
 const MONGO_URL = process.env.MONGO_URL;
