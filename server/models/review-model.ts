@@ -1,16 +1,20 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Model, Schema } from "mongoose";
 
 interface IReview {
   rating: number;
   title: string;
-  Comment: string;
+  comment: string;
   user: Schema.Types.ObjectId;
   product: Schema.Types.ObjectId;
   createdAt: Date;
   updatedAt: Date;
 }
 
-const ReviewSchema = new Schema<IReview>(
+interface IReviewMethods extends Model<IReview> {
+  calculateAverageRating(productId: Schema.Types.ObjectId): Promise<void>;
+}
+
+const ReviewSchema = new Schema<IReview, IReviewMethods>(
   {
     rating: {
       type: Number,
@@ -24,7 +28,7 @@ const ReviewSchema = new Schema<IReview>(
       required: [true, "Please provide review title"],
       maxlength: 100,
     },
-    Comment: {
+    comment: {
       type: String,
       required: [true, "Please provide review text"],
     },
@@ -44,6 +48,50 @@ const ReviewSchema = new Schema<IReview>(
 
 ReviewSchema.index({ product: 1, user: 1 }, { unique: true });
 
-const ReviewModel = mongoose.model<IReview>("Review", ReviewSchema);
+ReviewSchema.statics.calculateAverageRating = async function (
+  productId: Schema.Types.ObjectId
+) {
+  const result = await this.aggregate([
+    { $match: { product: productId } },
+    {
+      $group: {
+        _id: null,
+        averageRating: { $avg: "$rating" },
+        numOfReviews: { $sum: 1 },
+      },
+    },
+  ]);
+
+  try {
+    await mongoose.model("Product").findOneAndUpdate(
+      { _id: productId },
+      {
+        averageRating: Math.ceil(result[0]?.averageRating || 0),
+        numOfReviews: result[0]?.numOfReviews || 0,
+      }
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+ReviewSchema.post("save", async function () {
+  //@ts-ignore
+  await this.constructor.calculateAverageRating(this.product);
+});
+
+ReviewSchema.post(
+  "deleteOne",
+  { document: true, query: false },
+  async function () {
+    //@ts-ignore
+    await this.constructor.calculateAverageRating(this.product);
+  }
+);
+
+const ReviewModel = mongoose.model<IReview, IReviewMethods>(
+  "Review",
+  ReviewSchema
+);
 
 export default ReviewModel;
