@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 interface IProduct {
   name: string;
-  price: string;
+  price: number;
   description: string;
   image: string;
   category: string;
@@ -27,9 +27,9 @@ const ProductSchema = new Schema<IProduct>(
       maxlength: [100, "Name can not be more than 100 characters"],
     },
     price: {
-      type: String,
+      type: Number,
       required: [true, "Please provide product price"],
-      ddefault: 0,
+      default: 0,
     },
     description: {
       type: String,
