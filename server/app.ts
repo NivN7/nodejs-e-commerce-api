@@ -11,6 +11,7 @@ import authRouter from "./routes/auth-route";
 import userRouter from "./routes/user-route";
 import productRouter from "./routes/product-route";
 import reviewRouter from "./routes/review-route";
+import orderRouter from "./routes/order-route";
 
 dotenv.config();
 
@@ -34,6 +35,7 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/products", productRouter);
 app.use("/api/v1/reviews", reviewRouter);
+app.use("/api/v1/orders", orderRouter);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
