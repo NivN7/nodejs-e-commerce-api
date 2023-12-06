@@ -1,0 +1,516 @@
+{
+  "info": {
+    "_postman_id": "d4761585-5866-427c-b239-39696f2ef3d9",
+    "name": "e-commerce-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "28531632"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Test\",\r\n    \"email\":\"Test2@gmail.com\",\r\n    \"password\":\"secret\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "auth", "register"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"Test2@gmail.com\",\r\n    \"password\":\"secret\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "auth", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/auth/logout",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "auth", "logout"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/656b086d130cc26676c58d61",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "656b086d130cc26676c58d61"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show Current User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/showMe",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "showMe"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\":\"Test3\",\r\n    \"email\":\"Test3@gmail.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/updateUser",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "updateUser"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User Password",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"oldPassword\":\"secret\",\r\n    \"newPassword\":\"newSecret\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/users/updateUserPassword",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "users", "updateUserPassword"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/products",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "products"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\r\n    \"name\": \"Smart Watch\",\r\n    \"price\": 14999,\r\n    \"image\": \"https://example.com/smart-watch.jpg\",\r\n    \"colors\": [\"#cc3399\", \"#6699cc\", \"#ff6633\"],\r\n    \"company\": \"WearTech\",\r\n    \"description\": \"Track your fitness and stay connected with our feature-packed smartwatch. Stylish design, health monitoring, and seamless connectivity with your smartphone.\",\r\n    \"category\": \"wearables\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/products",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "products"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Product",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/products/656dd1a8c6bbb1efaeee7aef",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "products", "656dd1a8c6bbb1efaeee7aef"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/products/656dd09bc6bbb1efaeee7ad8",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "products", "656dd09bc6bbb1efaeee7ad8"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"inventory\":20\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/products/656c5abc3cc3d0d9b69f2e90",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "products", "656c5abc3cc3d0d9b69f2e90"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Upload Image",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/Nivesh Bhaisare/Downloads/oscar-final.jpeg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/products/uploadImage",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "products", "uploadImage"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Product Reviews",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/products/656dd1a8c6bbb1efaeee7aef/reviews",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": [
+                "api",
+                "v1",
+                "products",
+                "656dd1a8c6bbb1efaeee7aef",
+                "reviews"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Review",
+      "item": [
+        {
+          "name": "Get All Reviews",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/reviews",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "reviews"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Review",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"product\" : \"656dd1a8c6bbb1efaeee7aef\",\r\n    \"rating\" : 1,\r\n    \"title\" : \"Bad Product\",\r\n    \"comment\":\"Very good product\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/reviews",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "reviews"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Review",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/reviews/656c9c08c380c97706ca004e",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "reviews", "656c9c08c380c97706ca004e"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Review",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"rating\" : 3,\r\n    \"title\" : \"Good Product\",\r\n    \"comment\":\"Very good product\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/reviews/656db5403526ff615f2e461c",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "reviews", "656db5403526ff615f2e461c"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Review",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/reviews/656dd1bdc6bbb1efaeee7af3",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "reviews", "656dd1bdc6bbb1efaeee7af3"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"tax\": 399,\r\n    \"shippingFee\": 299,\r\n    \"items\": [\r\n      {\r\n        \"name\": \"Wireless Headphones\",\r\n        \"price\": 8999,\r\n        \"image\": \"https://example.com/wireless-headphones.jpg\",\r\n        \"amount\": 2,\r\n        \"product\": \"656ec69b1d6088a362e301cb\"\r\n      }, {\r\n        \"name\": \"Smart Watch\",\r\n        \"price\": 14999,\r\n        \"image\": \"https://example.com/smart-watch.jpg\",\r\n        \"amount\": 3,\r\n        \"product\": \"656ed18909b8aea8257127ad\"\r\n      }\r\n    ]\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "orders"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/orders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "orders"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Single Order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/orders/656eca5f5038fcd28998d9dd",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "orders", "656eca5f5038fcd28998d9dd"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Order",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"paymentIntentId\":\"someRandomId\"}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/v1/orders/656eca5f5038fcd28998d9dd",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "orders", "656eca5f5038fcd28998d9dd"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Current User Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/v1/orders/showAllMyOrders",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "v1", "orders", "showAllMyOrders"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
